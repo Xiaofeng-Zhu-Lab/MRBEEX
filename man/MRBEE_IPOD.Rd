@@ -17,7 +17,7 @@ MRBEE_IPOD(
   max.iter = 100,
   max.eps = 0.001,
   ebic.gamma = 1,
-  reliability.thres = 0.5,
+  reliability.thres = 0.8,
   rho = 2,
   maxdiff = 1.5,
   sampling.time = 100,
@@ -52,7 +52,7 @@ MRBEE_IPOD(
 
 \item{ebic.gamma}{The penalty factor for extended Bayesian Information Criterion (eBIC) adjustments on pleiotropy.}
 
-\item{reliability.thres}{A threshold on bias-correction term, defaults to 0.5.}
+\item{reliability.thres}{A threshold on bias-correction term, defaults to 0.8.}
 
 \item{rho}{The penalty multiplier used in the ADMM algorithm within the IPOD framework.}
 
@@ -62,7 +62,7 @@ MRBEE_IPOD(
 
 \item{sampling.frac}{The fraction of the data to be used in each subsampling iteration. Defaults to 0.5, meaning that 50\% of the data is used in each iteration.}
 
-\item{sampling.iter}{The number of iteration of MRBCEE.IPOD to be used in each subsampling iteration. Defaults to 5.}
+\item{sampling.iter}{The number of iteration of MRBEE_IPOD to be used in each subsampling iteration. Defaults to 5.}
 
 \item{theta.ini}{Initial estimates for the causal effects; defaults to FALSE, indicating automatic initialization.}
 

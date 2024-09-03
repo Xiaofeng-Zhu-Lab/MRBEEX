@@ -13,7 +13,7 @@ MRBEE_SuSiE(
   Rxy,
   cluster.index = c(1:length(by)),
   Nmin = F,
-  Lvec = c(1:min(5, nrow(bX))),
+  Lvec = c(1:min(10, nrow(bX))),
   pip.thres = 0.5,
   tauvec = seq(3, 50, by = 2),
   max.iter = 100,
@@ -23,7 +23,7 @@ MRBEE_SuSiE(
   ebic.gamma = 1,
   empirical.variance.lower = 0.2,
   empirical.variance.upper = 100,
-  reliability.thres = 0.5,
+  reliability.thres = 0.8,
   rho = 2,
   maxdiff = 1.5,
   sampling.time = 100,
@@ -70,7 +70,7 @@ MRBEE_SuSiE(
 
 \item{empirical.variance.upper}{The upper boundary of empirical variance estimate of residual, defaults to 2.}
 
-\item{reliability.thres}{A threshold on bias-correction term, defaults to 0.5.}
+\item{reliability.thres}{A threshold on bias-correction term, defaults to 0.8.}
 
 \item{rho}{The penalty multiplier used in the ADMM algorithm within the IPOD framework.}
 
@@ -80,7 +80,7 @@ MRBEE_SuSiE(
 
 \item{sampling.frac}{The fraction of the data to be used in each subsampling iteration. Defaults to 0.5, meaning that 50\% of the data is used in each iteration.}
 
-\item{sampling.iter}{The number of iteration of MRBCEE.IPOD to be used in each subsampling iteration. Defaults to 5.}
+\item{sampling.iter}{The number of iteration of MRBEE_SuSiE to be used in each subsampling iteration. Defaults to 5.}
 
 \item{theta.ini}{Initial estimates for the causal effects; defaults to FALSE, indicating automatic initialization.}
 
