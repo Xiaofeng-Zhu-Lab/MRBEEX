@@ -65,7 +65,6 @@ theta=c(matrixVectorMultiply(Hinv,g))
 if((norm(theta,"2")/norm(theta.ini,"2"))>maxdiff){
 theta=theta/norm(theta,"2")*maxdiff*norm(theta.ini1,"2")
 }
-########################### update gamma ############################
 gamma=(by-matrixVectorMultiply(bX,theta)-delta+rho*gamma1)/(1+rho)
 gamma1=mcp(gamma+delta/rho,tauvec[j]/rho)
 delta=delta+rho*(gamma-gamma1)
@@ -154,7 +153,6 @@ rss=sum(res^2)
 empirical.variance.formula=min(rss/(m-sum(theta.ini!=0)-sum(gamma.ini!=0)),empirical.variance.upper)
 empirical.variance.formula=max(empirical.variance.formula,empirical.variance.lower)
 ######################## selecting tau in Step 2###############################
-cat("selecting optimal L in SuSiE -> ")
 for(j in length(tauvec):1){
 theta=theta.ini
 gamma=gamma.ini
@@ -204,11 +202,11 @@ if(iter>3){
 error=max(abs(theta-theta1))
 }
 }
-Btheta.susie[,j]=theta
-Bgamma.susie[,j]=gamma1
+Btheta.ipod[,j]=theta
+Bgamma.ipod[,j]=gamma1
 df1=sum(gamma1!=0)
 df2=min(Lvec[vstar],sum(theta!=0))
-Bbic.susie[j]=log(rss)*Nmin+df2*(log(Nmin)+log(p)*ebic.theta)+(log(Nmin)+ebic.gamma*log(m))*df1
+Bbic.ipod[j]=log(rss)*Nmin+df2*(log(Nmin)+log(p)*ebic.theta)+(log(Nmin)+ebic.gamma*log(m))*df1
 }
 jstar=which.min(Bbic.ipod)
 theta.ini=Btheta.ipod[,jstar]
