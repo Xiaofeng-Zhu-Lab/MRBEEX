@@ -1,0 +1,27 @@
+Package: MRBEEX
+Type: Package
+Title: Mendelian Randomization using Bias-correction Estimating Equation.
+Version: 0.1.0
+Author: Yihe Yang
+Maintainer: Yihe Yang <yxy1234@case.edu>
+Description: MRBEEX extends the existing MRBEE package by introducing several advanced functions. It includes the MRBEE_IMRP function, which uses the IMRP algorithm to iteratively estimate causal effects and test for horizontal pleiotropy. The MRBEE_IPOD function employs the IPOD algorithm to select horizontal pleiotropy and allows for the inclusion of correlated instrumental variables with the corresponding LD matrix. MRBEE_SuSiE further extends MRBEE_IPOD by using the SuSiE method for selecting exposures while continuing to use the IPOD algorithm for horizontal pleiotropy selection.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Imports: 
+    MASS,
+    Rcpp (>= 1.0.0),
+    RcppArmadillo,
+    FDRestimation,
+    mvtnorm,
+    utils,
+    varbvs,
+    susieR,
+    CppMatrix,
+    Matrix
+Remotes: 
+    harryyiheyang/CppMatrix,
+    stephenslab/susieR,
+    pcarbo/varbvs
+ORCID: 0000-0001-6563-3579
